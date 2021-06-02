@@ -14,9 +14,8 @@ public class CasaController {
         System.out.println(casa);
     }
 
-    @GetMapping("/areacasa/{nombre}")
+    @GetMapping("/casa/{nombre}")
     public void areaCasa(@PathVariable String nombre) {
-        System.out.println(nombre);
-
+        CasaService.getCasa(nombre);
     }
 }

@@ -7,14 +7,15 @@ import java.util.HashMap;
 
 public class CasaService {
 
-    HashMap<String, Casa> bdCasas = new HashMap<>();
+    private static HashMap<String, Casa> bdCasas = new HashMap<>();
 
-    public static String newCasa(Casa casa)
+    public static void newCasa(Casa casa)
     {
 
-        metrosCasa(casa);
+        bdCasas.put(casa.getNombre(), casa);
+       /* metrosCasa(casa);
         valorCasa(casa);
-        return casa.toString()+", y la habitacion mas grande es:"+habitacionMasGrande(casa);
+        return casa.toString()+", y la habitacion mas grande es:"+habitacionMasGrande(casa);*/
     }
 
     public static double valorCasa(Casa casa){
@@ -48,7 +49,8 @@ public class CasaService {
        return casa.getHabitaciones().get(index);
     }
 
-    public void guardarCasa(Casa casa){
-        bdCasas.put(casa.getNombre(),casa);
+    public static void getCasa(String nombre){
+        System.out.println(bdCasas.get(nombre));
     }
+
 }
